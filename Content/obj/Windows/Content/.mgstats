@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_alien.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_alien.xnb","TextureProcessor","Texture2DContent",3544,19685,0.0039999
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_background.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_background.xnb","TextureProcessor","Texture2DContent",40342,2035797,0.2999569
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_bluesuit.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_bluesuit.xnb","TextureProcessor","Texture2DContent",2694,19685,0.0039989
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_yellowsuit.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_yellowsuit.xnb","TextureProcessor","Texture2DContent",2723,19685,0.005
