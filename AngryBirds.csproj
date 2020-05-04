@@ -56,12 +56,28 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameManagement\AnimatedGameObject.cs" />
+    <Compile Include="GameManagement\Animation.cs" />
+    <Compile Include="GameManagement\AssetManager.cs" />
+    <Compile Include="GameManagement\Colission.cs" />
+    <Compile Include="GameManagement\DrawingHelper.cs" />
     <Compile Include="GameManagement\GameObject.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameManagement\GameEnvironment.cs" />
-    <Compile Include="GameManagement\GameState.cs" />
+    <Compile Include="GameManagement\GameObjectGrid.cs" />
+    <Compile Include="GameManagement\GameObjectList.cs" />
+    <Compile Include="GameManagement\GameSettingsManager.cs" />
+    <Compile Include="GameManagement\GameStateManager.cs" />
+    <Compile Include="GameManagement\InputHelper.cs" />
+    <Compile Include="GameManagement\RotatingSpriteGameObject.cs" />
     <Compile Include="GameManagement\SpriteGameObject.cs" />
+    <Compile Include="GameManagement\SpriteSheet.cs" />
+    <Compile Include="GameManagement\TextGameObject.cs" />
     <Compile Include="GameObjects\Bird.cs" />
+    <Compile Include="GameObjects\BirdLife.cs" />
+    <Compile Include="GameObjects\CatapultRight.cs" />
+    <Compile Include="GameObjects\CatapultLeft.cs" />
+    <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,15 +90,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\spr_alien.png" />
     <Content Include="Content\spr_background.png" />
     <Content Include="Content\spr_bluesuit.png" />
+    <Content Include="Content\spr_catapultLeft.png" />
+    <Content Include="Content\spr_catapultRight.png" />
+    <Content Include="Content\spr_grabM.png" />
+    <Content Include="Content\spr_openM.png" />
     <Content Include="Content\spr_yellowsuit.png" />
-    <Content Include="Content\spr_alien.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
+    <Compile Include="GameManagement\IGameLoopObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

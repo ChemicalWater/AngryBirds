@@ -1,5 +1,9 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_alien.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_alien.xnb","TextureProcessor","Texture2DContent",3544,19685,0.0039999
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_alien.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_alien.xnb","TextureProcessor","Texture2DContent",17259,3001,0.1809988
 "C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_background.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_background.xnb","TextureProcessor","Texture2DContent",40342,2035797,0.2999569
 "C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_bluesuit.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_bluesuit.xnb","TextureProcessor","Texture2DContent",2694,19685,0.0039989
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_catapultLeft.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_catapultLeft.xnb","TextureProcessor","Texture2DContent",19265,12493,0.1790661
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_catapultRight.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_catapultRight.xnb","TextureProcessor","Texture2DContent",18465,12493,0.0039948
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_grabM.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_grabM.xnb","TextureProcessor","Texture2DContent",17337,5101,0.0049993
+"C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_openM.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_openM.xnb","TextureProcessor","Texture2DContent",17652,3157,0.1780008
 "C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_yellowsuit.png","C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_yellowsuit.xnb","TextureProcessor","Texture2DContent",2723,19685,0.005

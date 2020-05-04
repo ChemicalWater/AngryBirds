@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AngryBirds.GameStates;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -20,8 +21,8 @@ namespace AngryBirds
             screen = new Point(1024, 500);
             ApplyResolutionSettings();
 
-            gameStateList.Add(new PlayingState());
-            GameEnvironment.SwitchTo(0);
+            GameStateManager.AddGameState("PlayingState", new PlayingState());
+            GameStateManager.SwitchTo("PlayingState");
         }
 
 

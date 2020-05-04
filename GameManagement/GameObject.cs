@@ -1,49 +1,119 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-class GameObject
+public abstract class GameObject : IGameLoopObject
 {
-    public Vector2 position;
-    public Vector2 velocity;
-    public Texture2D texture;
+    protected GameObject parent;
+    protected Vector2 position, velocity;
+    protected int layer;
+    protected string id;
+    protected bool visible;
 
-    public GameObject(String assetName)
+    public GameObject(int layer = 0, string id = "")
     {
-        texture = GameEnvironment.ContentManager.Load<Texture2D>(assetName);
-        Init();
+        this.layer = layer;
+        this.id = id;
+        position = Vector2.Zero;
+        velocity = Vector2.Zero;
+        visible = true;
     }
 
-    public virtual void Update() { }
-
-    public virtual void Draw(SpriteBatch spriteBatch)
+    public virtual void HandleInput(InputHelper inputHelper)
     {
-        spriteBatch.Draw(texture, position, Color.White);
     }
 
-    public virtual void Init()
+    public virtual void Update(GameTime gameTime)
     {
-
+        position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
     }
 
-    public Boolean Overlaps(GameObject other)
+    public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
-        float w0 = this.texture.Width,
-            h0 = this.texture.Height,
-            w1 = other.texture.Width,
-            h1 = other.texture.Height,
-            x0 = this.position.X,
-            y0 = this.position.Y,
-            x1 = other.position.X,
-            y1 = other.position.Y;
-
-        return !(x0 > x1 + w1 || x0 + w0 < x1 ||
-          y0 > y1 + h1 || y0 + h0 < y1);
     }
 
+    public virtual void Reset()
+    {
+        visible = true;
+    }
+
+    public virtual Vector2 Position
+    {
+        get { return position; }
+        set { position = value; }
+    }
+
+    public virtual Vector2 Velocity
+    {
+        get { return velocity; }
+        set { velocity = value; }
+    }
+
+    public virtual Vector2 GlobalPosition
+    {
+        get
+        {
+            if (parent != null)
+            {
+                return parent.GlobalPosition + Position;
+            }
+            else
+            {
+                return Position;
+            }
+        }
+    }
+
+    public GameObject Root
+    {
+        get
+        {
+            if (parent != null)
+            {
+                return parent.Root;
+            }
+            else
+            {
+                return this;
+            }
+        }
+    }
+
+    public GameObjectList GameWorld
+    {
+        get
+        {
+            return Root as GameObjectList;
+        }
+    }
+
+    public virtual int Layer
+    {
+        get { return layer; }
+        set { layer = value; }
+    }
+
+    public virtual GameObject Parent
+    {
+        get { return parent; }
+        set { parent = value; }
+    }
+
+    public string Id
+    {
+        get { return id; }
+    }
+
+    public bool Visible
+    {
+        get { return visible; }
+        set { visible = value; }
+    }
+
+    public virtual Rectangle BoundingBox
+    {
+        get
+        {
+            return new Rectangle((int)GlobalPosition.X, (int)GlobalPosition.Y, 0, 0);
+        }
+    }
 }
-

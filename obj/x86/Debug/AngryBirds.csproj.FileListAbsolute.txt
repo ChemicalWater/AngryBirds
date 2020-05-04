@@ -24,3 +24,8 @@ C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_bac
 C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_alien.xnb
 C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_bluesuit.xnb
 C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_yellowsuit.xnb
+C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_grabM.xnb
+C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_openM.xnb
+C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_catapult.xnb
+C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_catapultLeft.xnb
+C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_catapultRight.xnb
