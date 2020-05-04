@@ -11,9 +11,17 @@
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_bluesuit.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_yellowsuit.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_openM.png</File>
-    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_grabM.png</File>
+    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_bottomPlank.png</File>
+    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_innerwallPlank.png</File>
+    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_outerwallPlank.png</File>
+    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_topPlank.png</File>
+    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_triangleWood.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

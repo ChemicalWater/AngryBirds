@@ -78,6 +78,8 @@
     <Compile Include="GameObjects\CatapultRight.cs" />
     <Compile Include="GameObjects\CatapultLeft.cs" />
     <Compile Include="GameObjects\Cursor.cs" />
+    <Compile Include="GameObjects\Pig.cs" />
+    <Compile Include="GameObjects\WoodMaterials.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,10 +95,15 @@
     <Content Include="Content\spr_alien.png" />
     <Content Include="Content\spr_background.png" />
     <Content Include="Content\spr_bluesuit.png" />
+    <Content Include="Content\spr_bottomPlank.png" />
     <Content Include="Content\spr_catapultLeft.png" />
     <Content Include="Content\spr_catapultRight.png" />
-    <Content Include="Content\spr_grabM.png" />
+    <Content Include="Content\spr_cursor.png" />
+    <Content Include="Content\spr_innerwallPlank.png" />
     <Content Include="Content\spr_openM.png" />
+    <Content Include="Content\spr_outerwallPlank.png" />
+    <Content Include="Content\spr_topPlank.png" />
+    <Content Include="Content\spr_triangleWood.png" />
     <Content Include="Content\spr_yellowsuit.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>

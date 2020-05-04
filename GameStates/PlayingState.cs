@@ -29,9 +29,18 @@ namespace AngryBirds.GameStates
                 BirdLives.Add(birdLife);
             }
             this.Add(BirdLives);
-
             cursor = new Cursor();
             aBird = new Bird();
+
+            this.Add(new WoodMaterials("spr_bottomPlank", new Vector2(800, 300)));
+            this.Add(new WoodMaterials("spr_innerwallPlank", new Vector2(800,220)));
+            this.Add(new WoodMaterials("spr_innerwallPlank", new Vector2(865, 220)));
+            this.Add(new WoodMaterials("spr_topPlank", new Vector2(805, 202)));
+            this.Add(new WoodMaterials("spr_triangleWood", new Vector2(805, 178)));
+            this.Add(new WoodMaterials("spr_outerwallPlank", new Vector2(700, 260)));
+            this.Add(new Pig("spr_yellowsuit", new Vector2(745, 290)));
+            this.Add(new Pig("spr_bluesuit", new Vector2(840, 163)));
+
             this.Add(new CatapultRight());
             this.Add(aBird);
             this.Add(new CatapultLeft());
@@ -52,6 +61,7 @@ namespace AngryBirds.GameStates
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
+                
         }
     }
 }

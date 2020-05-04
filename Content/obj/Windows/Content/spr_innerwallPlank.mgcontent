@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_catapultLeft.png</SourceFile>
-  <SourceTime>2020-05-04T04:27:24.3168052+02:00</SourceTime>
-  <DestFile>C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_catapultLeft.xnb</DestFile>
-  <DestTime>2020-05-04T04:27:30.9758086+02:00</DestTime>
+  <SourceFile>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_innerwallPlank.png</SourceFile>
+  <SourceTime>2020-05-04T05:21:04.8910563+02:00</SourceTime>
+  <DestFile>C:/Users/Gebruiker/source/repos/AngryBirds/Content/bin/Windows/Content/spr_innerwallPlank.xnb</DestFile>
+  <DestTime>2020-05-04T05:29:44.9777873+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
