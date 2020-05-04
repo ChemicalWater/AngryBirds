@@ -15,8 +15,11 @@ namespace AngryBirds.GameStates
         Cursor cursor;
         Bird aBird;
         GameObjectList BirdLives;
+        GameObjectList Pigs;
+        GameObjectList WoodMat;
+        TextGameObject score;
 
-        private int lives;
+        private int lives = 2;
 
         public PlayingState()
         {
@@ -28,18 +31,28 @@ namespace AngryBirds.GameStates
                 BirdLife birdLife = new BirdLife(new Vector2(100 + 30 * iLife, 270));
                 BirdLives.Add(birdLife);
             }
+            Pigs = new GameObjectList();
+            WoodMat = new GameObjectList();
+
             this.Add(BirdLives);
             cursor = new Cursor();
             aBird = new Bird();
 
-            this.Add(new WoodMaterials("spr_bottomPlank", new Vector2(800, 300)));
-            this.Add(new WoodMaterials("spr_innerwallPlank", new Vector2(800,220)));
-            this.Add(new WoodMaterials("spr_innerwallPlank", new Vector2(865, 220)));
-            this.Add(new WoodMaterials("spr_topPlank", new Vector2(805, 202)));
-            this.Add(new WoodMaterials("spr_triangleWood", new Vector2(805, 178)));
-            this.Add(new WoodMaterials("spr_outerwallPlank", new Vector2(700, 260)));
-            this.Add(new Pig("spr_yellowsuit", new Vector2(745, 290)));
-            this.Add(new Pig("spr_bluesuit", new Vector2(840, 163)));
+            WoodMat.Add(new WoodMaterials("spr_bottomPlank", new Vector2(800, 300)));
+            WoodMat.Add(new WoodMaterials("spr_innerwallPlank", new Vector2(800,220)));
+            WoodMat.Add(new WoodMaterials("spr_innerwallPlank", new Vector2(865, 220)));
+            WoodMat.Add(new WoodMaterials("spr_topPlank", new Vector2(805, 202)));
+            WoodMat.Add(new WoodMaterials("spr_triangleWood", new Vector2(805, 178)));
+            WoodMat.Add(new WoodMaterials("spr_outerwallPlank", new Vector2(700, 260)));
+            Pigs.Add(new Pig("spr_yellowsuit", new Vector2(745, 290)));
+            Pigs.Add(new Pig("spr_bluesuit", new Vector2(840, 163)));
+            this.Add(Pigs);
+            this.Add(WoodMat);
+
+            score = new TextGameObject("GameFont");
+            score.Text = "0";
+            score.Position = new Vector2(950, 20);
+            this.Add(score);
 
             this.Add(new CatapultRight());
             this.Add(aBird);
@@ -49,12 +62,36 @@ namespace AngryBirds.GameStates
 
         public override void Reset()
         {
-            lives = 3;
+            lives = 2;
             base.Reset();
         }
 
         public override void Update(GameTime gameTime)
         {
+
+            foreach (Pig pig in Pigs.Children)
+            {
+                if (pig.CollidesWith(aBird))
+                {
+                    pig.Reset();
+                    aBird.Reset();
+                    lives--;
+                    BirdLives.Children[lives].Position = new Vector2(-2000, 0);
+                    if (lives <= 0)
+                    {
+                        GameEnvironment.GameStateManager.SwitchTo("GameOverState");
+                        Reset();
+                    }
+                }
+            }
+            foreach (WoodMaterials woodM in WoodMat.Children)
+            {
+                if (woodM.CollidesWith(aBird))
+                {
+
+                }
+            }
+
             base.Update(gameTime);
         }
 

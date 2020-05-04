@@ -21,7 +21,7 @@ namespace AngryBirds.GameObjects
         
         public override void Reset()
         {
-            position.X = -2000;
+            position.X = -1000;
         }
     }
 }

@@ -80,7 +80,9 @@
     <Compile Include="GameObjects\Cursor.cs" />
     <Compile Include="GameObjects\Pig.cs" />
     <Compile Include="GameObjects\WoodMaterials.cs" />
+    <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
+    <Compile Include="GameStates\TitleScreenState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,9 +101,11 @@
     <Content Include="Content\spr_catapultLeft.png" />
     <Content Include="Content\spr_catapultRight.png" />
     <Content Include="Content\spr_cursor.png" />
+    <Content Include="Content\spr_GameOver.png" />
     <Content Include="Content\spr_innerwallPlank.png" />
     <Content Include="Content\spr_openM.png" />
     <Content Include="Content\spr_outerwallPlank.png" />
+    <Content Include="Content\spr_startScreen.png" />
     <Content Include="Content\spr_topPlank.png" />
     <Content Include="Content\spr_triangleWood.png" />
     <Content Include="Content\spr_yellowsuit.png" />
@@ -111,6 +115,7 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
     <Compile Include="GameManagement\IGameLoopObject.cs" />
+    <None Include="Content\GameFont.spritefont" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

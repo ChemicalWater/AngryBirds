@@ -13,10 +13,10 @@ namespace AngryBirds.GameObjects
         {
             this.position = position;
         }
-
         public override void Reset()
         {
-            position.X = -2000;
+            position.X = -2500;
+            base.Reset();
         }
     }
 }

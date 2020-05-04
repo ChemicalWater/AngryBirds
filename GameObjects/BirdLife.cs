@@ -9,7 +9,7 @@ namespace AngryBirds
 {
     class BirdLife : SpriteGameObject
     {
-        Vector2 startPosition;
+        private Vector2 startPosition;
         float wobblePhase;
         const float WOBBLE_FREQUENCY = 5.0f;
         const float WOBBLE_AMPLITUDE = 0.05f;
@@ -17,6 +17,7 @@ namespace AngryBirds
         public BirdLife(Vector2 startPosition) : base("spr_alien")
         {
             this.position = startPosition;
+            Console.WriteLine(startPosition + "Start BEFORE");
             wobblePhase = (float)(GameEnvironment.Random.NextDouble() * Math.PI * 2);
         }
 

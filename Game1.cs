@@ -21,8 +21,11 @@ namespace AngryBirds
             screen = new Point(1024, 500);
             ApplyResolutionSettings();
 
+            GameStateManager.AddGameState("TitleScreenState", new TitleScreenState());
             GameStateManager.AddGameState("PlayingState", new PlayingState());
-            GameStateManager.SwitchTo("PlayingState");
+            GameStateManager.AddGameState("GameOverState", new GameOverState());
+
+            GameStateManager.SwitchTo("TitleScreenState");
         }
 
 
