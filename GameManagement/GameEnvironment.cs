@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 public class GameEnvironment : Game
 {
     protected GraphicsDeviceManager graphics;
-    protected SpriteBatch spriteBatch;
+    public SpriteBatch spriteBatch;
     protected InputHelper inputHelper;
     protected Matrix spriteScale;
     protected Point windowSize;

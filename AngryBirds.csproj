@@ -78,6 +78,7 @@
     <Compile Include="GameObjects\CatapultRight.cs" />
     <Compile Include="GameObjects\CatapultLeft.cs" />
     <Compile Include="GameObjects\Cursor.cs" />
+    <Compile Include="GameObjects\guideSquare.cs" />
     <Compile Include="GameObjects\Pig.cs" />
     <Compile Include="GameObjects\WoodMaterials.cs" />
     <Compile Include="GameStates\GameOverState.cs" />
@@ -102,6 +103,7 @@
     <Content Include="Content\spr_catapultRight.png" />
     <Content Include="Content\spr_cursor.png" />
     <Content Include="Content\spr_GameOver.png" />
+    <Content Include="Content\spr_guide.png" />
     <Content Include="Content\spr_innerwallPlank.png" />
     <Content Include="Content\spr_openM.png" />
     <Content Include="Content\spr_outerwallPlank.png" />

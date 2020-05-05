@@ -9,6 +9,7 @@
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_GameOver.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_startScreen.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_catapultLeft.png</File>
+    <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_guide.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_catapultRight.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_alien.png</File>
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_bluesuit.png</File>
@@ -21,6 +22,7 @@
     <File>C:/Users/Gebruiker/source/repos/AngryBirds/Content/spr_triangleWood.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

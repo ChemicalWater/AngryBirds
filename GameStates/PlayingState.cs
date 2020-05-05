@@ -18,6 +18,7 @@ namespace AngryBirds.GameStates
         GameObjectList Pigs;
         GameObjectList WoodMat;
         TextGameObject score;
+        GameObjectList guide;
 
         private int lives = 2;
 
@@ -33,6 +34,7 @@ namespace AngryBirds.GameStates
             }
             Pigs = new GameObjectList();
             WoodMat = new GameObjectList();
+            guide = new GameObjectList();
 
             this.Add(BirdLives);
             cursor = new Cursor();
@@ -49,6 +51,13 @@ namespace AngryBirds.GameStates
             this.Add(Pigs);
             this.Add(WoodMat);
 
+            for (int i = 0; i < 10; i++)
+            {
+                guideSquare sQuare = new guideSquare(new Vector2(-10,0));
+                guide.Add(sQuare);
+            }
+
+            this.Add(guide);
             score = new TextGameObject("GameFont");
             score.Text = "0";
             score.Position = new Vector2(950, 20);
@@ -68,6 +77,75 @@ namespace AngryBirds.GameStates
 
         public override void Update(GameTime gameTime)
         {
+            // check if bird launched, if not NO dots
+            if(aBird.launched == false)
+            {
+                // Setting up velocity + position
+                Vector2 velocity;
+                velocity.X = (aBird.startPosition.X ) - aBird.Position.X;
+                velocity.Y = ((aBird.startPosition.Y) - aBird.Position.Y);
+                Vector2 pos = aBird.Position;
+                pos.X += aBird.Sprite.Width * 0.5f;
+                pos.Y += aBird.Sprite.Height * 0.5f;
+
+
+                // Simulate bird flight till after bird location
+                while (pos.X < aBird.startPosition.X)
+                {
+                 
+                    pos.X = pos.X + velocity.X * 0.016f;
+
+                    pos.Y = pos.Y + velocity.Y * 0.016f + 0.5f * 9.81f * (0.016f * 0.016f);
+                    velocity.Y = velocity.Y + 9.81f * 0.016f;
+                }
+
+                // Redo above, simulate on 100(10 dots) frames now
+                for (int frame = 0; frame < 100; frame++)
+                {
+                    
+                    pos.X = pos.X + velocity.X * 0.016f;
+
+                    pos.Y = pos.Y + velocity.Y * 0.016f + 0.5f * 9.81f * (0.016f * 0.016f);
+                    velocity.Y = velocity.Y + 9.81f * 0.016f;
+
+                    // check every 10 frames
+                    if (frame % 10 == 0)
+                    { 
+                        guide.Children[frame / 10].Position = pos;
+                    }
+
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Vector2 outaMap;
+                    outaMap.X = -200;
+                    outaMap.Y = -100;
+                    guide.Children[i].Position = outaMap;
+                }
+            }
+           
+
+            if (aBird.Position.Y >= GameEnvironment.Screen.Y - aBird.Sprite.Height 
+                || aBird.Position.X >= GameEnvironment.Screen.X - aBird.Width )
+            {
+                aBird.Reset();
+                lives--;
+                if (lives < 0)
+                {
+                    GameEnvironment.GameStateManager.SwitchTo("GameOverState");
+                    Reset();
+                    return;
+                }
+               
+                
+               
+                BirdLives.Children[lives].Position = new Vector2(-2000, 0);
+                return;
+            }
 
             foreach (Pig pig in Pigs.Children)
             {
@@ -76,12 +154,14 @@ namespace AngryBirds.GameStates
                     pig.Reset();
                     aBird.Reset();
                     lives--;
-                    BirdLives.Children[lives].Position = new Vector2(-2000, 0);
-                    if (lives <= 0)
+                    
+                    if (lives < 0)
                     {
                         GameEnvironment.GameStateManager.SwitchTo("GameOverState");
                         Reset();
+                        return;
                     }
+                    BirdLives.Children[lives].Position = new Vector2(-2000, 0);
                 }
             }
             foreach (WoodMaterials woodM in WoodMat.Children)

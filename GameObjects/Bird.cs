@@ -10,7 +10,8 @@ namespace AngryBirds.GameObjects
     class Bird : SpriteGameObject
     {
         public Vector2 startPosition;
-        public bool clicked;
+        public bool clicked = false;
+        public bool launched = false;
 
         public Bird() : base("spr_alien")
         {
@@ -24,9 +25,27 @@ namespace AngryBirds.GameObjects
             if (inputHelper.MouseLeftButtonDown())
             {
                 clicked = true;
-                position = inputHelper.MousePosition;
+               if(launched == false)
+                    position = inputHelper.MousePosition;
             } else
             {
+                if (clicked)
+                {
+                    if (position.X <= startPosition.X)
+                    {
+                        launched = true;
+
+
+                        velocity.X = startPosition.X - position.X;
+                        velocity.Y = (startPosition.Y - position.Y);
+                
+
+                       
+                    }
+
+
+                }
+
                 clicked = false;
             }
         }
@@ -34,7 +53,8 @@ namespace AngryBirds.GameObjects
         {
             position.X = 205;
             position.Y = 200;
-
+            velocity = Vector2.Zero;
+            launched = false;
             base.Reset();
         }
 
@@ -44,11 +64,16 @@ namespace AngryBirds.GameObjects
             position.Y = MathHelper.Clamp(position.Y, 0, GameEnvironment.Screen.Y - sprite.Height);
 
             base.Update(gameTime);
-
-             if (!clicked && position != startPosition && velocity.X == 0)
-            {
-
-            }
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+          
+             if (launched)
+             {
+                // move stuff
+                 position.X = position.X + velocity.X * deltaTime;
+              
+                 position.Y = position.Y + velocity.Y * deltaTime + 0.5f * 9.81f * (deltaTime * deltaTime);
+                 velocity.Y = velocity.Y + 9.81f * deltaTime;
+             }
         }
     }
 }

@@ -36,3 +36,4 @@ C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_out
 C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\GameFont.xnb
 C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_GameOver.xnb
 C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_startScreen.xnb
+C:\Users\Gebruiker\source\repos\AngryBirds\bin\Windows\x86\Debug\Content\spr_guide.xnb

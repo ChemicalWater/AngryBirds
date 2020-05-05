@@ -68,6 +68,18 @@
 /processorParam:TextureFormat=Color
 /build:spr_catapultLeft.png
 
+#begin spr_guide.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:spr_guide.png
+
 #begin spr_catapultRight.png
 /importer:TextureImporter
 /processor:TextureProcessor
