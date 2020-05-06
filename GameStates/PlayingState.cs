@@ -21,7 +21,7 @@ namespace AngryBirds.GameStates
         GameObjectList guide;
 
         private int lives = 2;
-        public static int NumberScore = 0;
+        private int NumberScore = 0;
         private bool gameOver;
 
         public PlayingState()
@@ -77,6 +77,7 @@ namespace AngryBirds.GameStates
             NumberScore = 0;
             lives = 2;
             score.Text = NumberScore.ToString();
+            gameOver = false;
         }
 
         public override void Update(GameTime gameTime)
