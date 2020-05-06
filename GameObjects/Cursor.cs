@@ -10,7 +10,6 @@ namespace AngryBirds.GameObjects
 {
     class Cursor : SpriteGameObject
     {
-        public float distCursor;
         public Cursor() : base ("spr_openM")
         {
             Mouse.SetPosition(235, 500);

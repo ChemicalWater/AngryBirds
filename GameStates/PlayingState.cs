@@ -21,6 +21,8 @@ namespace AngryBirds.GameStates
         GameObjectList guide;
 
         private int lives = 2;
+        public static int NumberScore = 0;
+        private bool gameOver;
 
         public PlayingState()
         {
@@ -60,7 +62,7 @@ namespace AngryBirds.GameStates
             this.Add(guide);
             score = new TextGameObject("GameFont");
             score.Text = "0";
-            score.Position = new Vector2(950, 20);
+            score.Position = new Vector2(900, 20);
             this.Add(score);
 
             this.Add(new CatapultRight());
@@ -71,8 +73,10 @@ namespace AngryBirds.GameStates
 
         public override void Reset()
         {
-            lives = 2;
             base.Reset();
+            NumberScore = 0;
+            lives = 2;
+            score.Text = NumberScore.ToString();
         }
 
         public override void Update(GameTime gameTime)
@@ -102,10 +106,12 @@ namespace AngryBirds.GameStates
                 // Redo above, simulate on 100(10 dots) frames now
                 for (int frame = 0; frame < 100; frame++)
                 {
-                    
-                    pos.X = pos.X + velocity.X * 0.016f;
 
+                    // Update position X, adding velocity * the time that has elapsed(seconds)
+                    pos.X = pos.X + velocity.X * 0.016f;
+                    // Update position Y, adding velocity * the elapsed time + an half + gravity * squared time(seconds)
                     pos.Y = pos.Y + velocity.Y * 0.016f + 0.5f * 9.81f * (0.016f * 0.016f);
+                    // Update the velocity with gravity and time that has elapsed(seconds)
                     velocity.Y = velocity.Y + 9.81f * 0.016f;
 
                     // check every 10 frames
@@ -135,14 +141,21 @@ namespace AngryBirds.GameStates
                 aBird.Reset();
                 lives--;
                 if (lives < 0)
+                    gameOver = true;
+
+                if (lives < 0 && NumberScore <= 0)
                 {
                     GameEnvironment.GameStateManager.SwitchTo("GameOverState");
                     Reset();
                     return;
                 }
-               
-                
-               
+                else if (lives > 0 && NumberScore > 0 && gameOver || lives < 0 && NumberScore > 0 && gameOver)
+                {
+                    NumberScore += (lives * 50);
+                    GameEnvironment.GameStateManager.SwitchTo("WinState");
+                    Reset();
+                    return;
+                }
                 BirdLives.Children[lives].Position = new Vector2(-2000, 0);
                 return;
             }
@@ -151,13 +164,24 @@ namespace AngryBirds.GameStates
             {
                 if (pig.CollidesWith(aBird))
                 {
-                    pig.Reset();
+                    NumberScore += 50;
+                    pig.Position = new Vector2(-2000, 0);
                     aBird.Reset();
+                    score.Text = NumberScore.ToString();
                     lives--;
-                    
                     if (lives < 0)
+                        gameOver = true;
+
+                    if (lives < 0 && NumberScore <= 0)
                     {
                         GameEnvironment.GameStateManager.SwitchTo("GameOverState");
+                        Reset();
+                        return;
+                    }
+                    else if (lives > 0 && NumberScore > 0 && gameOver|| lives < 0 && NumberScore > 0 && gameOver)
+                    {
+                        NumberScore += (lives * 50);
+                        GameEnvironment.GameStateManager.SwitchTo("WinState");
                         Reset();
                         return;
                     }
@@ -168,7 +192,29 @@ namespace AngryBirds.GameStates
             {
                 if (woodM.CollidesWith(aBird))
                 {
+                    woodM.Reset();
+                    aBird.Reset();
+                    lives--;
+                    woodM.Position = new Vector2(-2000, 0);
 
+                    if (lives < 0)
+                        gameOver = true;
+
+                    if (lives < 0 && NumberScore <= 0)
+                    {
+                        GameEnvironment.GameStateManager.SwitchTo("GameOverState");
+                        Reset();
+                        return;
+                    }
+                    else if (lives > 0 && NumberScore > 0 && gameOver|| lives < 0 && NumberScore > 0 && gameOver)
+                    {
+                        NumberScore += (lives * 50);
+                        GameEnvironment.GameStateManager.SwitchTo("WinState");
+                        Reset();
+                        return;
+                    }
+                    BirdLives.Children[lives].Position = new Vector2(-2000, 0);
+                   
                 }
             }
 

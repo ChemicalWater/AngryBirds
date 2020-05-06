@@ -14,10 +14,10 @@ namespace AngryBirds
         const float WOBBLE_FREQUENCY = 5.0f;
         const float WOBBLE_AMPLITUDE = 0.05f;
 
-        public BirdLife(Vector2 startPosition) : base("spr_alien")
+        public BirdLife(Vector2 Position) : base("spr_alien")
         {
-            this.position = startPosition;
-            Console.WriteLine(startPosition + "Start BEFORE");
+            this.position = Position;
+            startPosition = Position;
             wobblePhase = (float)(GameEnvironment.Random.NextDouble() * Math.PI * 2);
         }
 

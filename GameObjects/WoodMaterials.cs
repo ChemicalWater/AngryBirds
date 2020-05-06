@@ -9,9 +9,12 @@ namespace AngryBirds.GameObjects
 {
     class WoodMaterials : SpriteGameObject
     {
+        private Vector2 startPosition;
+
         public WoodMaterials(String assetName, Vector2 position) : base(assetName)
         {
             this.position = position;
+            startPosition = position;
         }
 
         public override void Update(GameTime gameTime)
@@ -21,7 +24,7 @@ namespace AngryBirds.GameObjects
         
         public override void Reset()
         {
-            position.X = -1000;
+            this.position = startPosition;
         }
     }
 }

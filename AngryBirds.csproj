@@ -84,6 +84,7 @@
     <Compile Include="GameStates\GameOverState.cs" />
     <Compile Include="GameStates\PlayingState.cs" />
     <Compile Include="GameStates\TitleScreenState.cs" />
+    <Compile Include="GameStates\WinState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -110,6 +111,7 @@
     <Content Include="Content\spr_startScreen.png" />
     <Content Include="Content\spr_topPlank.png" />
     <Content Include="Content\spr_triangleWood.png" />
+    <Content Include="Content\spr_winState.png" />
     <Content Include="Content\spr_yellowsuit.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>

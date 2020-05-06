@@ -22,7 +22,10 @@ namespace AngryBirds.GameObjects
         public override void HandleInput(InputHelper inputHelper)
         {
             base.HandleInput(inputHelper);
-            if (inputHelper.MouseLeftButtonDown())
+            if (inputHelper.MouseLeftButtonDown() && inputHelper.MousePosition.X > 300 && launched == false && position.X > startPosition.X)
+                position.Y = inputHelper.MousePosition.Y;
+
+                if (inputHelper.MouseLeftButtonDown() && inputHelper.MousePosition.X < 300)
             {
                 clicked = true;
                if(launched == false)
@@ -38,8 +41,6 @@ namespace AngryBirds.GameObjects
 
                         velocity.X = startPosition.X - position.X;
                         velocity.Y = (startPosition.Y - position.Y);
-                
-
                        
                     }
 
@@ -68,11 +69,12 @@ namespace AngryBirds.GameObjects
           
              if (launched)
              {
-                // move stuff
+                // Update position X, adding velocity * the time that has elapsed(seconds)
                  position.X = position.X + velocity.X * deltaTime;
-              
-                 position.Y = position.Y + velocity.Y * deltaTime + 0.5f * 9.81f * (deltaTime * deltaTime);
-                 velocity.Y = velocity.Y + 9.81f * deltaTime;
+                // Update position Y, adding velocity * the elapsed time + an half + gravity * squared time(seconds)
+                position.Y = position.Y + velocity.Y * deltaTime + 0.5f * 9.81f * (deltaTime * deltaTime);
+                // Update the velocity with gravity and time that has elapsed(seconds)
+                velocity.Y = velocity.Y + 9.81f * deltaTime;
              }
         }
     }
